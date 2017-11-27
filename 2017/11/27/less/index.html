@@ -6,15 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/11 | 95sunny</title>
+  <title>less | 95sunny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="95sunny">
-<meta property="og:url" content="http://yoursite.com/archives/2017/11/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="less">
+<meta property="og:url" content="http://yoursite.com/2017/11/27/less/index.html">
 <meta property="og:site_name" content="95sunny">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-26T23:46:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="95sunny">
+<meta name="twitter:title" content="less">
   
   
     <link rel="icon" href="/favicon.png">
@@ -144,361 +145,193 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-less" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      less
+    </h1>
+  
+
+        
+        <a href="/2017/11/27/less/" class="archive-article-date">
+  	<time datetime="2017-11-27T07:47:00.486Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h6><h2 id="less介绍"><a href="#less介绍" class="headerlink" title="less介绍"></a>less介绍</h2><p>less是一种动态样式语言，是CSS预处理语言的一种，它使用类似CSS的语法，为CSS赋予了动态语言的特性，如变量、继承、运算、函数等，更方便CSS的编写和维护</p>
+<h2 id="less编译工具"><a href="#less编译工具" class="headerlink" title="less编译工具"></a>less编译工具</h2><p>推荐使用Koala编译工具对less进行编译<br>Koala是一款中国人开发的LESS/SASS编译工具<br>下载地址：<a href="http://koala-app.com/index-zh.html" target="_blank">http://koala-app.com/index-zh.html</a><br>其他编译方式有：Node.js库，浏览器端编译等</p>
+<h2 id="less编译"><a href="#less编译" class="headerlink" title="less编译"></a>less编译</h2><p>less只是用于开发的语言，并不能被浏览器解读，我们需要使用Koala这样的编译工具把它编译成css文件，而实际项目中<strong>导入的也是</strong>同步解析出来的<strong>css文件</strong>，而<strong>不是</strong>less文件</p>
+<h2 id="less的注释"><a href="#less的注释" class="headerlink" title="less的注释"></a>less的注释</h2><p>less的注释分为两种<code>/*...*/</code>和<code>//...</code><br><code>/*..*/</code>注释会被解析到css文件中，成为css的解析<br><code>//...</code>注释只会存在于less中，解析后并不会出现在css中</p>
+<h2 id="less变量"><a href="#less变量" class="headerlink" title="less变量"></a>less变量</h2><p>声明变量只要在变量名前面加上个<code>@</code>符号即可，如：<code>@test_width: 300px</code><br>使用变量也得带上<code>@</code>符号：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">	width: @test_width;</span><br><span class="line">&#125;</span><br><span class="line">/*-------------编译----------------*/</span><br><span class="line">.box&#123;</span><br><span class="line">	width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="less混合"><a href="#less混合" class="headerlink" title="less混合"></a>less混合</h2><p>当某些属性出现频率高的时候，可以把这些属性抽取出来封装成一个样式，然后和别的样式混合使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.my_font&#123;</span><br><span class="line">	color: #00c2f4;</span><br><span class="line">    font-size: 24px;</span><br><span class="line">    font-weight: bold;</span><br><span class="line">    font-family: &apos;微软雅黑&apos;;</span><br><span class="line">&#125;</span><br><span class="line">.box&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	.my_font;</span><br><span class="line">&#125;</span><br><span class="line">/*-------------编译----------------*/</span><br><span class="line">.box&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	color: #00c2f4;</span><br><span class="line">    font-size: 24px;</span><br><span class="line">    font-weight: bold;</span><br><span class="line">    font-family: &apos;微软雅黑&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当有同类的不同需求时，混合是可以带参数的，就像函数一样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.my_color(@color)&#123;</span><br><span class="line">    color: @color;</span><br><span class="line">    background-color: black;</span><br><span class="line">&#125;</span><br><span class="line">.box&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	my_color(red);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当大多数是同一个值，但又有个别不同值时，可以设置默认参数，意思是如果传入了参数则使用传入的参数，如果没有传入参数则使用默认参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//混合用于兼容写法就非常适合</span><br><span class="line">.border_radius(@radius:5px)&#123;</span><br><span class="line">    -webkit-border-radius: @radius;</span><br><span class="line">    -moz-border-radius: @radius;</span><br><span class="line">    border-radius: @radius;</span><br><span class="line">&#125;</span><br><span class="line">.box&#123;</span><br><span class="line"></span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	.border_radius();</span><br><span class="line">&#125;</span><br><span class="line">.another&#123;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	.border_radius(10px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="less匹配模式"><a href="#less匹配模式" class="headerlink" title="less匹配模式"></a>less匹配模式</h2><p>匹配模式就是<strong>类似</strong>if判断语句的东西<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.pos(r)&#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.pos(a)&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">&#125;</span><br><span class="line">.pos(f)&#123;</span><br><span class="line">  position: fixed;</span><br><span class="line">&#125;</span><br><span class="line">//传入参数r时，会自动匹配到上面相对定位那一条</span><br><span class="line">.box&#123;</span><br><span class="line">  .pos(r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也可以同时使用一些其他的变量参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//同样可以使用默认值写法</span><br><span class="line">.pos(r,@bgc:red)&#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  background-color: @bgc;</span><br><span class="line">&#125;</span><br><span class="line">.pos(a,@bgc)&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  background-color: @bgc;</span><br><span class="line">&#125;</span><br><span class="line">.pos(f,@bgc)&#123;</span><br><span class="line">  position: fixed;</span><br><span class="line">  background-color: @bgc;</span><br><span class="line">&#125;</span><br><span class="line">//匹配.pos并传入背景颜色</span><br><span class="line">.box&#123;</span><br><span class="line">  .pos(r，blue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当每个匹配结果都有相同的属性和值的时候，可以把重复的属性和值抽取出来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.pos(@_,@bgc)&#123;</span><br><span class="line">  width: 0;</span><br><span class="line">  height: 0;</span><br><span class="line">&#125;</span><br><span class="line">//@_ 代表匹配所有，意思是不管匹配哪个，这里的属性都得加进去（公共属性），注意：其他参数（@bgc）即使用不带，也必须在形参里面写上</span><br></pre></td></tr></table></figure></p>
+<h2 id="less运算"><a href="#less运算" class="headerlink" title="less运算"></a>less运算</h2><p>less中可以对数据进行数学运算：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@box_width: 100px;</span><br><span class="line">.box&#123;</span><br><span class="line">	width: (@box_width + 20) * 5;</span><br><span class="line">&#125;</span><br><span class="line">//因为前面的@box_width是带有单位的，所以后面运算中的数值是可以省略单位的</span><br></pre></td></tr></table></figure></p>
+<h2 id="less嵌套"><a href="#less嵌套" class="headerlink" title="less嵌套"></a>less嵌套</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<p>当需要给类似这样的结构设置样式时，CSS选择器往往会特别长，在less中有更便捷的方法（解析出来还是特别长，但至少开发的时候容易理解，机构分明）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">table&#123;</span><br><span class="line">	background-color: red;</span><br><span class="line">	thead&#123;</span><br><span class="line">		 background-color: blue;</span><br><span class="line">		 tr&#123;</span><br><span class="line">		 	background-color: green;</span><br><span class="line">			td&#123;</span><br><span class="line">				background-color: yellow;</span><br><span class="line">				a&#123;</span><br><span class="line">					background-color: purple;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		 &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	tbody&#123;</span><br><span class="line">		background-color: pink;</span><br><span class="line">		tr&#123;</span><br><span class="line">			background-color: orange;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="arguments"><a href="#arguments" class="headerlink" title="@arguments"></a>@arguments</h2><p>@arguments和对象中的arguments差不多，当参数太多又不想一个个写时，可以用@arguments来替代整体<br>（用的不多）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">. my_border(@w:10px,@c:red,@s:soild)&#123;</span><br><span class="line">	border: @arguments;</span><br><span class="line">&#125;</span><br><span class="line">.box&#123;</span><br><span class="line">	.my_border(20px);</span><br><span class="line">&#125;</span><br><span class="line">/*-----------------编译---------------------*/</span><br><span class="line">.box&#123;</span><br><span class="line">	border: 20px red soild;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="避免编译"><a href="#避免编译" class="headerlink" title="避免编译"></a>避免编译</h2><p>当需要输出一些不需要编译，或者less无法识别，又或者特意需要的错误时，我们要让less跳过这一段，不对这一段进行编译<br>例如：CSS有个计算属性<code>calc()</code>，让浏览器计算传入值的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">	width: calc(300px - 30px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里如果直接写入less中，括号内的数值将被less直接计算出来，而需求是这里不计算，让浏览器来计算，就需要让less跳过这一段的编译：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">	width: ~&apos;calc(300px - 30px)&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>把需要避免编译的内容放在<code>~&quot; &quot;</code>中即可（只用单/双引号都行）</p>
+<h2 id="important"><a href="#important" class="headerlink" title="!important"></a>!important</h2><p><code>!important</code>是优先级最高的意思<br>使用less混合时，在调用的后面加上<code>!important</code>，编译结果会在调用的内容的每个属性后面都加上<code>!important</code> </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/JavaScript特效/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.578Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/JavaScript特效/">JavaScript特效</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/27/less/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Angular.js/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.571Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/11/27/浏览器兼容问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          浏览器兼容问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/27/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/Angular.js/">Angular.js</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less介绍"><span class="toc-number"></span> <span class="toc-text">less介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less编译工具"><span class="toc-number"></span> <span class="toc-text">less编译工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less编译"><span class="toc-number"></span> <span class="toc-text">less编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less的注释"><span class="toc-number"></span> <span class="toc-text">less的注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less变量"><span class="toc-number"></span> <span class="toc-text">less变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less混合"><span class="toc-number"></span> <span class="toc-text">less混合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less匹配模式"><span class="toc-number"></span> <span class="toc-text">less匹配模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less运算"><span class="toc-number"></span> <span class="toc-text">less运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less嵌套"><span class="toc-number"></span> <span class="toc-text">less嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arguments"><span class="toc-number"></span> <span class="toc-text">@arguments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免编译"><span class="toc-number"></span> <span class="toc-text">避免编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#important"><span class="toc-number"></span> <span class="toc-text">!important</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/JavaScript学前/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/JavaScript学前/">JavaScript学前</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据类型</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">运算符</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">变量</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">语法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/JavaScript基础/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.560Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/JavaScript基础/">JavaScript基础</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">简单操作</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">事件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">属性和方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数值方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数组方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">字符串方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">定时器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/jQuery/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.555Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/jQuery/">jQuery</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/html+css/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.549Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/html+css/">html+css</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Ajax/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.544Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/Ajax/">Ajax</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/微信小程序/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/微信小程序/">微信小程序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Java基础/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.528Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/Java基础/">Java基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/浏览器兼容问题/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.503Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/浏览器兼容问题/">浏览器兼容问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/11/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -522,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

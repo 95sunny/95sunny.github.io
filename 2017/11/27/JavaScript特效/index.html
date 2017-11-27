@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/11 | 95sunny</title>
+  <title>JavaScript特效 | 95sunny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="95sunny">
-<meta property="og:url" content="http://yoursite.com/archives/2017/11/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript特效">
+<meta property="og:url" content="http://yoursite.com/2017/11/27/JavaScript特效/index.html">
 <meta property="og:site_name" content="95sunny">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://chuantu.biz/t5/155/1501405963x456080313.gif">
+<meta property="og:image" content="http://chuantu.biz/t5/162/1502088359x1032877828.gif">
+<meta property="og:image" content="http://chuantu.biz/t5/168/1502439007x1032877610.gif">
+<meta property="og:updated_time" content="2017-11-26T23:46:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="95sunny">
+<meta name="twitter:title" content="JavaScript特效">
+<meta name="twitter:image" content="http://chuantu.biz/t5/155/1501405963x456080313.gif">
   
   
     <link rel="icon" href="/favicon.png">
@@ -144,361 +149,189 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JavaScript特效" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      JavaScript特效
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/JavaScript特效/" class="archive-article-date">
+
+        
+        <a href="/2017/11/27/JavaScript特效/" class="archive-article-date">
   	<time datetime="2017-11-27T07:47:00.578Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/JavaScript特效/">JavaScript特效</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h6><h2 id="九宫格算法"><a href="#九宫格算法" class="headerlink" title="九宫格算法"></a>九宫格算法</h2><p>效果：<br><img src="http://chuantu.biz/t5/155/1501405963x456080313.gif" style="height:300px"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//css就是填充红色设置个宽高，这里就不写了</span><br><span class="line">//html就两个button加几个div，也省略...</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    window.onload = function () &#123;//等页面元素全部加载完毕再开始执行</span><br><span class="line">        //获取标签</span><br><span class="line">        var topBtns = document.getElementById(&apos;top&apos;).getElementsByTagName(&apos;button&apos;);</span><br><span class="line">        var bottomBtns = document.getElementById(&apos;bottom&apos;).getElementsByTagName(&apos;button&apos;);</span><br><span class="line">        function change(btn, num) &#123;//封装成函数，便于重复使用</span><br><span class="line">            btn.onclick = function () &#123;</span><br><span class="line">                for(var i = 0;i &lt; bottomBtns.length;i ++)&#123;//遍历红色小块</span><br><span class="line">                    var col =  parseInt(i % num);//计算列号</span><br><span class="line">                    var row = parseInt(i / num);//计算行号</span><br><span class="line">                    var myLeft = col *(100 + 10);//根据列号计算出left</span><br><span class="line">                    var myTop = row *(100 + 10);//根据行号计算出top</span><br><span class="line">                    //根据计算结果重写定位进行排版</span><br><span class="line">                    bottomBtns[i].style.position = &apos;absolute&apos;;</span><br><span class="line">                    bottomBtns[i].style.left = myLeft + &apos;px&apos;;</span><br><span class="line">                    bottomBtns[i].style.top = myTop + &apos;px&apos;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        //调用封装好的函数</span><br><span class="line">        change(topBtns[0],3);</span><br><span class="line">        change(topBtns[1],4);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>使用 <code>%</code>运算可以很方便的求出当前红色小块所在的列数，使用<code>/</code>运算可很方便的求出当前红色小块所在的行数，行数和列数还有i的值，都是从0开始计算的</p>
+<h2 id="tab切换（排他思想示例）"><a href="#tab切换（排他思想示例）" class="headerlink" title="tab切换（排他思想示例）"></a>tab切换（排他思想示例）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .surr&#123;</span><br><span class="line">        background-color: red;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;button&gt;按钮1&lt;/button&gt;</span><br><span class="line">&lt;button&gt;按钮2&lt;/button&gt;</span><br><span class="line">&lt;button&gt;按钮3&lt;/button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var btns = document.getElementsByTagName(&apos;button&apos;);</span><br><span class="line">for (var i = 0; i &lt; btns.length; i++) &#123;</span><br><span class="line">    btns[i].onclick = function () &#123;</span><br><span class="line">        for (var j = 0; j &lt; btns.length; j++) &#123;</span><br><span class="line">            btns[j].className = &apos;&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        this.className = &apos;surr&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实现排他的原理就是在每次设置某个元素之前，先把所有的元素初始化</li>
+</ul>
+<h2 id="定时器匀速动画"><a href="#定时器匀速动画" class="headerlink" title="定时器匀速动画"></a>定时器匀速动画</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//获取标签</span><br><span class="line">var btn = document.getElementById(&apos;btn&apos;);</span><br><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">//初始化timer值</span><br><span class="line">var timer = null;</span><br><span class="line">//添加点击事件</span><br><span class="line">btn.onclick = function () &#123;</span><br><span class="line">	constant(0,40,800);//调用运动函数（初始位置，每次移动的距离（速度），结束位置）</span><br><span class="line">&#125;;</span><br><span class="line">function constant(begin,speed,target) &#123;//封装运动函数</span><br><span class="line">	clearInterval(timer);//清空定时器   **1**</span><br><span class="line">	timer = setInterval(function () &#123;//创建定时器</span><br><span class="line">		begin += speed;//更新位置</span><br><span class="line">		if(begin &gt;= target)&#123;//判断是否到终点</span><br><span class="line">			clearInterval(timer);//清空定时器</span><br><span class="line">			begin = target;//设置位置为终点位置    **2**</span><br><span class="line">		&#125;</span><br><span class="line">		box.style.left = begin + &apos;px&apos;;//修改位置</span><br><span class="line">	&#125;,10)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>为了防止重复点击按钮导致的添加了多个重叠的定时器，点击按钮后执行其他代码之前先清空定时器</li>
+<li>有时因为数值的的偏差，可能会出现移动到接近终点的位置时，加speed会超过，不加speed又不到结束位置的情况，最终导致结束位置的细微偏差，解决方法就是在最后一个不超过结束位置的地方停止运动（清空定时器），再直接吧位置设置偏移到终点位置</li>
+</ol>
+<h2 id="定时器缓动动画（变速运动）"><a href="#定时器缓动动画（变速运动）" class="headerlink" title="定时器缓动动画（变速运动）"></a>定时器缓动动画（变速运动）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//获取标签</span><br><span class="line">var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">var btn = document.getElementById(&apos;btn&apos;);</span><br><span class="line">var timer = null;//初始化timer的值</span><br><span class="line">var begin = 0;//设置起始位置</span><br><span class="line">var target = 800;//设置结束位置</span><br><span class="line">//添加点击事件</span><br><span class="line">btn.onclick = function()&#123;</span><br><span class="line">	clearInterval(timer);//清空定时器</span><br><span class="line">	//创建定时器</span><br><span class="line">	timer = setInterval(function()&#123;</span><br><span class="line">		var speed = Math.ceil((target - begin)*0.2) ;//设置实时变换的速度    **1**</span><br><span class="line">		begin += speed;//更新位置</span><br><span class="line">		box.style.left = begin + &apos;px&apos;;</span><br><span class="line">		if(begin == target)&#123;//判断终止条件</span><br><span class="line">			clearInterval(timer)      **1**</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,20)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>执行定时器的过程中begin的值越来越大，所以计算出来的值会越来越小，达到缓动的效果</li>
+<li>当beigin特别接近于target时，计算的结果小于1，向上取整得到的就是1，最终会以1px的速度偏移，1px已经是最小的单位的，所以begin最后一定会等于target，不需要像匀速运动那样另外设置</li>
+</ul>
+<h2 id="抽奖效果"><a href="#抽奖效果" class="headerlink" title="抽奖效果"></a>抽奖效果</h2><p>效果：<br><img src="http://chuantu.biz/t5/162/1502088359x1032877828.gif" style="height:300px"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    window.onload = function () &#123;</span><br><span class="line">        //1.获取标签</span><br><span class="line">        var btns = document.getElementsByTagName(&apos;button&apos;);</span><br><span class="line">        var oh1 = document.getElementById(&apos;oh1&apos;);</span><br><span class="line">        var timer = null;//初始化timer值</span><br><span class="line">        btns[0].onclick = function () &#123;//开始按钮</span><br><span class="line">		    //创建奖池数组</span><br><span class="line">            var names = [&apos;一等奖&apos;,&apos;二等奖&apos;,&apos;三等奖&apos;,&apos;四等奖&apos;,&apos;五等奖&apos;,&apos;六等奖&apos;,&apos;特等奖&apos;,&apos;鼓励奖&apos;,&apos;谢谢惠顾&apos;];</span><br><span class="line">            clearInterval(timer);//执行前清空定时器，防止重复点击导致定时器叠加</span><br><span class="line">            timer = setInterval(function () &#123;//开启定时器</span><br><span class="line">                var randomNum = parseInt(Math.random() * names.length);//生成随机数</span><br><span class="line">                oh1.innerHTML = names[randomNum];//修改HTML内容</span><br><span class="line">            &#125;,10)</span><br><span class="line">        &#125;;</span><br><span class="line">        btns[1].onclick = function () &#123;//停止按钮</span><br><span class="line">            clearInterval(timer);//清除定时器</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>innerHTML</code>是指定元素中的全部html文档内容（包括标签），而<code>innerText</code>指包括文本内容，不包含标签</li>
+</ul>
+<h2 id="定时器展示长图"><a href="#定时器展示长图" class="headerlink" title="定时器展示长图"></a>定时器展示长图</h2><p><img src="http://chuantu.biz/t5/168/1502439007x1032877610.gif" style="height:300px"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//获取标签</span><br><span class="line"> var pic = document.getElementsByTagName(&apos;img&apos;)[0];</span><br><span class="line"> var left = document.getElementById(&apos;left&apos;);</span><br><span class="line"> var right = document.getElementById(&apos;right&apos;);</span><br><span class="line"> var timer = null;//初始化定时器</span><br><span class="line"> var begin = 0;//初始位置</span><br><span class="line"> var speed = 4;//速度（每个单位时间移动的距离）</span><br><span class="line"> function move(span, end) &#123;//封装</span><br><span class="line">     span.onmouseover = function () &#123;//鼠标移入事件</span><br><span class="line">         clearInterval(timer);//清空定时器</span><br><span class="line">         timer = setInterval(function () &#123;//开启定时器</span><br><span class="line">             if(end == 0)&#123;//判断方向，如果最终位置为0则是移入了左边区域，图片需要向右移动</span><br><span class="line">                 begin = begin + speed;//更新位置</span><br><span class="line">                 if (begin &gt;= end)&#123;//判断是否到终点</span><br><span class="line">                     clearInterval(timer);//停止定时器</span><br><span class="line">                     begin = end;//消除误差</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;else &#123;//判断方向，如果最终位置为-383则是移入了右边区域，图片需要向左移动</span><br><span class="line">                 begin = begin - speed;//更新位置</span><br><span class="line">                 if (begin &lt;= end)&#123;//判断终点</span><br><span class="line">                     clearInterval(timer);//停止定时器</span><br><span class="line">                     begin = end;//消除误差</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">             pic.style.left = begin + &apos;px&apos;;//更新位置属性</span><br><span class="line">         &#125;,10);//10毫秒循环一次定时器</span><br><span class="line">     &#125;;</span><br><span class="line"> &#125;</span><br><span class="line"> //调用封装好的函数</span><br><span class="line"> move(right,-383);</span><br><span class="line"> move(left,0);</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/27/JavaScript特效/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Angular.js/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.571Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/27/Angular.js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Angular.js</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/Angular.js/">Angular.js</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九宫格算法"><span class="toc-number"></span> <span class="toc-text">九宫格算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tab切换（排他思想示例）"><span class="toc-number"></span> <span class="toc-text">tab切换（排他思想示例）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定时器匀速动画"><span class="toc-number"></span> <span class="toc-text">定时器匀速动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定时器缓动动画（变速运动）"><span class="toc-number"></span> <span class="toc-text">定时器缓动动画（变速运动）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽奖效果"><span class="toc-number"></span> <span class="toc-text">抽奖效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定时器展示长图"><span class="toc-number"></span> <span class="toc-text">定时器展示长图</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/JavaScript学前/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/JavaScript学前/">JavaScript学前</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据类型</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">运算符</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">变量</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">语法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/JavaScript基础/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.560Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/JavaScript基础/">JavaScript基础</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">简单操作</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">事件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">属性和方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数值方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数组方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">字符串方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">定时器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/jQuery/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.555Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/jQuery/">jQuery</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/html+css/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.549Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/html+css/">html+css</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Ajax/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.544Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/Ajax/">Ajax</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/微信小程序/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/微信小程序/">微信小程序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Java基础/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.528Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/Java基础/">Java基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/浏览器兼容问题/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.503Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/浏览器兼容问题/">浏览器兼容问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/11/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -522,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

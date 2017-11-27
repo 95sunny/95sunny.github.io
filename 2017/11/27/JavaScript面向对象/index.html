@@ -6,15 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/11 | 95sunny</title>
+  <title>JavaScript面向对象 | 95sunny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="95sunny">
-<meta property="og:url" content="http://yoursite.com/archives/2017/11/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript面向对象">
+<meta property="og:url" content="http://yoursite.com/2017/11/27/JavaScript面向对象/index.html">
 <meta property="og:site_name" content="95sunny">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-26T23:46:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="95sunny">
+<meta name="twitter:title" content="JavaScript面向对象">
   
   
     <link rel="icon" href="/favicon.png">
@@ -144,361 +145,238 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JavaScript面向对象" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript面向对象
+    </h1>
+  
+
+        
+        <a href="/2017/11/27/JavaScript面向对象/" class="archive-article-date">
+  	<time datetime="2017-11-27T07:47:00.463Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h6><h2 id="JavaScript的组成"><a href="#JavaScript的组成" class="headerlink" title="JavaScript的组成"></a>JavaScript的组成</h2><p>JavaScript是由DOM，BOM和JavaScript三部分组成</p>
+<ul>
+<li>DOM： Document Object Model，文档对象模型，为操作页面元素提供了一套方法（API）<ul>
+<li>API：application（应用） progarmming（程序设计） interface（接口）</li>
+</ul>
+</li>
+<li>BOM： Browser Object Model，浏览器对象模型（window）</li>
+<li>ECMAScript：规定了JS的核心语法</li>
+</ul>
+<h2 id="JS的数据类型"><a href="#JS的数据类型" class="headerlink" title="JS的数据类型"></a>JS的数据类型</h2><h3 id="基本（简单）数据类型"><a href="#基本（简单）数据类型" class="headerlink" title="基本（简单）数据类型"></a>基本（简单）数据类型</h3><p><code>string</code>字符串<br><code>number</code>数值（整数和小数）<br><code>boolean</code>布尔类型（true | false）<br><code>underfind</code>自定义<br><code>null</code>空（typeof null 为 Objeck）</p>
+<h3 id="复杂（复合）数据类型"><a href="#复杂（复合）数据类型" class="headerlink" title="复杂（复合）数据类型"></a>复杂（复合）数据类型</h3><p><code>Object</code>对象<br><code>Array</code>数组<br><code>String</code>字符串对象<br><code>Number</code>数值对象<br><code>Function</code>函数</p>
+<h3 id="其他相关"><a href="#其他相关" class="headerlink" title="其他相关"></a>其他相关</h3><ul>
+<li>关键字<code>typeof</code>判断数据类型<br>语法：typeof 数据（变量）<ul>
+<li>用 <code>typeof</code> 操作复杂类型的所有数据都是Object，除了<code>Function</code>，<code>typeof Function</code>为Function</li>
+</ul>
+</li>
+<li>关键字<code>instanceof</code>判断某个对象是否是指定构造函数的实例<br><code>null</code>例外，<code>typeof null</code>是Object，但是<code>null instanceof Object</code>却是<code>false</code><h3 id="和-的区别"><a href="#和-的区别" class="headerlink" title="==和===的区别"></a><code>==</code>和<code>===</code>的区别</h3><code>==</code>是值相等，<code>===</code>是值和类型都相等 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&apos;123&apos; == 123; //true</span><br><span class="line">&apos;123&apos; === 123; //false</span><br><span class="line">null == undefined; //true</span><br><span class="line">null === undefined; //false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>undefined</code>是开辟了内存空间，但是没有使用过<br><code>null</code>是开辟了内存空间，而且使用了，但是没有值<br>两者内存空间的内容都是“空”，所以<code>==</code>能成立</p>
+<h6 id="前端中变量的值一般会为null，只有在后台开发时，某个变量不使用了，需要回收占用空间，才回手动赋值null"><a href="#前端中变量的值一般会为null，只有在后台开发时，某个变量不使用了，需要回收占用空间，才回手动赋值null" class="headerlink" title="前端中变量的值一般会为null，只有在后台开发时，某个变量不使用了，需要回收占用空间，才回手动赋值null"></a>前端中变量的值一般会为null，只有在后台开发时，某个变量不使用了，需要回收占用空间，才回手动赋值null</h6><h3 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h3><p>值类型数据：string,number,boolean等<br>引用类型：Object,Array,Function等<br>值类型就是直接把一个真实的值赋给某个变量（类似于现金）<br>引用类型是把存放数据的地址付给某个变量（类似于银行支票）</p>
+<h2 id="对象的基本概念"><a href="#对象的基本概念" class="headerlink" title="对象的基本概念"></a>对象的基本概念</h2><p>对象就是属性和方法的集合<br>对象的格式：{‘键1’:’值1’,’键2’:’值2’···}，键值对的组合，形式类似于字典（json）</p>
+<h3 id="对象的创建："><a href="#对象的创建：" class="headerlink" title="对象的创建："></a>对象的创建：</h3><ul>
+<li>声明变量：<code>var obj = {&#39;key&#39;:&#39;value&#39;};</code></li>
+<li>构造函数：<code>var obj = new Object();</code><h3 id="访问对象的属性："><a href="#访问对象的属性：" class="headerlink" title="访问对象的属性："></a>访问对象的属性：</h3></li>
+<li>点语法：<code>obj.name</code></li>
+<li>中括号：<code>obj[name]</code>（类似数组下标的形式但不是传数值，而是方法名）<h3 id="JS对象的动态特性"><a href="#JS对象的动态特性" class="headerlink" title="JS对象的动态特性"></a>JS对象的动态特性</h3>增删改查<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">	‘name’:‘sun’;//大多数情况key值加不加引号都不影响，但是严格来说是要加引号的,例如数字开头的键名称就必须加引号，不然谷歌浏览器会报错</span><br><span class="line">&#125;；</span><br><span class="line">obj.age = 20;//给不存在的属性赋值，视为添加该属性</span><br><span class="line">delete obj.name;//使用delete关键字可以删除对象中的属性</span><br><span class="line">obj.age = 10;//给已经存在的属性赋值，视为修改该属性</span><br><span class="line">alert(obj.age);//直接使用点语法不赋值则是访问该属性</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>通过点语法或者中括号可以访问对象中的属性（查），在访问时给属性重新赋值，若是已存在该属性则修改该属性，若是不存在则添加该属性，使用delete关键字可以删除对象中的属性</p>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><h4 id="in关键字"><a href="#in关键字" class="headerlink" title="in关键字"></a><code>in</code>关键字</h4><ol>
+<li><code>for...in</code>循环语句，遍历对象（key-value）所有的key<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">	name : &quot;sun&quot;,</span><br><span class="line">	age : 20</span><br><span class="line">&#125;;</span><br><span class="line">for(var k in obj)&#123;//这里的k相当于普通for循环里的i值</span><br><span class="line">	console.log(k,obj[k]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>运行的结果是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name sun</span><br><span class="line">age 20</span><br></pre></td></tr></table></figure></p>
+<pre><code>* 这里的`obj[k]`必须使用中括号的格式，不能用点语法，否则取的值为undefined；因为使用点语法会被认定为在obj中方位k属性，而 obj中并没有k属性
+</code></pre><ol>
+<li><p>判断对象中是否存在指定的属性<br>语法格式： <code>属性 in 对象</code><br>如：<code>&quot;name&quot; in obj</code>注意属性名是字符串，要有引号<br>返回的结果是一个布尔值</p>
+</li>
+<li><p><code>in</code>在数组中的注意事项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,4,6,7,2];</span><br><span class="line">console.log(1 in arr);//true</span><br><span class="line">console.log(7 in arr);//false</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>数组使用<code>in</code>关键字时需要注意，<code>in</code>前面的并不是实际数字，而是下标，其实和对象一样，<code>in</code>前面的是key，而不是value；所以在数组中，<code>in</code>判断的是数组中是否存在指定的下标</p>
+<h6 id="附：如果需要判断数组中是否存在指定的元素也有办法，一中办法是遍历数组，每次遍历的时候判断一个是否是指定的值，如果是可以用break-跳出循环；还有一种办法是使用indexOf-方法，indexOf-方法是返回指定元素的索引，如果返回了索引则表示有该元素，如果返回值是-1则表示没有指定的元素"><a href="#附：如果需要判断数组中是否存在指定的元素也有办法，一中办法是遍历数组，每次遍历的时候判断一个是否是指定的值，如果是可以用break-跳出循环；还有一种办法是使用indexOf-方法，indexOf-方法是返回指定元素的索引，如果返回了索引则表示有该元素，如果返回值是-1则表示没有指定的元素" class="headerlink" title="附：如果需要判断数组中是否存在指定的元素也有办法，一中办法是遍历数组，每次遍历的时候判断一个是否是指定的值，如果是可以用break;跳出循环；还有一种办法是使用indexOf()方法，indexOf()方法是返回指定元素的索引，如果返回了索引则表示有该元素，如果返回值是-1则表示没有指定的元素"></a>附：如果需要判断数组中是否存在指定的元素也有办法，一中办法是遍历数组，每次遍历的时候判断一个是否是指定的值，如果是可以用break;跳出循环；还有一种办法是使用indexOf()方法，indexOf()方法是返回指定元素的索引，如果返回了索引则表示有该元素，如果返回值是-1则表示没有指定的元素</h6><h4 id="delete关键字"><a href="#delete关键字" class="headerlink" title="delete关键字"></a><code>delete</code>关键字</h4><ol>
+<li>删除对象中的属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    &quot;name&quot; : &quot;sun&quot;</span><br><span class="line">&#125;;</span><br><span class="line">delete obj.name;</span><br><span class="line">console.log(obj.name);//undefined</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>delete obj.name</code>也是有个返回值的，返回值送一个布尔值，true代表删除成功，false代表删除失败</p>
+<ol>
+<li>删除未使用var声明的变量<br>不使用var声明的变量，将是一个全局变量，会成为window的属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = 10;</span><br><span class="line">delete a;</span><br><span class="line">console.log(a);//报错：a is not defined</span><br><span class="line">console.log(window.a);//undefined</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>a</code>报错是因为没有定义a这个变量，之前的delete都是针对于对象的，这里的<code>delete a</code>其实是省略了window的，用的是window的属性，而不是变量a</p>
+<ol>
+<li>当delete作用在变量上时，将返回false，表示删除失败，delete只能用于删除对象的属性，并不能删除使用var声明的变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var b =20;</span><br><span class="line">console.log(delete b);//false   静默错误（确实是出现了错误，无法达到指定的效果，但是系统又不报错，只是正常返回值，这种错误叫做静默错误）在严格模式下，静默错误是会报错的</span><br><span class="line">console.log(b);//20   删除失败，所以值还在</span><br><span class="line">console.log(window.b);//20    所有的全局变量都是window的属性，所有的全局函数都是window的方法，所以这里使用访问window的方法也是能访问到的</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>在程序开发过程中，有些错误会阻断整个进程，导致后面的正确代码也无法执行<br>在一些情况下，我们需要保证即使有些部分出现了已知或为知错误，后面的代码还能够继续执行，就要用到异常捕获结构<code>try{ }</code> <code>catch(){ }</code>:<br>控制台报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">    console.log(&apos;fn&apos;);</span><br><span class="line">&#125;</span><br><span class="line">var a = 10;</span><br><span class="line">a();//因为a是一个变量而非函数，所以当代码执行到此处时会报错，之后的代码不再执行</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure></p>
+<p>控制台打印错误信息，并执行后续代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">	console.log(&apos;fn&apos;);</span><br><span class="line">&#125;</span><br><span class="line">//在try中的代码确实存在错误，所以会进入catch中</span><br><span class="line">try&#123;</span><br><span class="line">	var a = 10;</span><br><span class="line">	a();</span><br><span class="line">&#125;</span><br><span class="line">//当try中代码出错时才会进入catch中，否则不执行catch，参数e是错误信息</span><br><span class="line">catch(e)&#123;</span><br><span class="line">	console.log(e);</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure></p>
+<p>手动抛出异常：<br>使用<code>throw</code>关键字可以设置手动抛出异常如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">	var a;</span><br><span class="line">	throw &apos;变量未定义！&apos;;</span><br><span class="line">&#125;</span><br><span class="line">//此时的参数e接收通过throw抛出的异常：`变量未定义！`，手动抛出异常不局限于字符串，也可以是对象，数组之类的别的数据</span><br><span class="line">catch(e)&#123;</span><br><span class="line">	console.log(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>实际上完整的异常捕获机构在<code>try</code>和<code>catch</code>之后还有一个部分：<code>finally</code><br><code>finally</code>中的代码，不管<code>try</code>中代码是否出错，都将执行<br>在后端开发中，有时释放一些资源需要用到这个，前端基本用不上<br>## </li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/JavaScript特效/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.578Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/JavaScript特效/">JavaScript特效</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/27/JavaScript面向对象/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Angular.js/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.571Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/11/27/git/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          git
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/27/node.js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node.js</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/Angular.js/">Angular.js</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript的组成"><span class="toc-number"></span> <span class="toc-text">JavaScript的组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS的数据类型"><span class="toc-number"></span> <span class="toc-text">JS的数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本（简单）数据类型"><span class="toc-number"></span> <span class="toc-text">基本（简单）数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复杂（复合）数据类型"><span class="toc-number"></span> <span class="toc-text">复杂（复合）数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他相关"><span class="toc-number"></span> <span class="toc-text">其他相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和-的区别"><span class="toc-number"></span> <span class="toc-text">==和===的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#前端中变量的值一般会为null，只有在后台开发时，某个变量不使用了，需要回收占用空间，才回手动赋值null"><span class="toc-number">1.</span> <span class="toc-text">前端中变量的值一般会为null，只有在后台开发时，某个变量不使用了，需要回收占用空间，才回手动赋值null</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值类型和引用类型"><span class="toc-number"></span> <span class="toc-text">值类型和引用类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的基本概念"><span class="toc-number"></span> <span class="toc-text">对象的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的创建："><span class="toc-number"></span> <span class="toc-text">对象的创建：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问对象的属性："><span class="toc-number"></span> <span class="toc-text">访问对象的属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS对象的动态特性"><span class="toc-number"></span> <span class="toc-text">JS对象的动态特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键字"><span class="toc-number"></span> <span class="toc-text">关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#in关键字"><span class="toc-number"></span> <span class="toc-text">in关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#附：如果需要判断数组中是否存在指定的元素也有办法，一中办法是遍历数组，每次遍历的时候判断一个是否是指定的值，如果是可以用break-跳出循环；还有一种办法是使用indexOf-方法，indexOf-方法是返回指定元素的索引，如果返回了索引则表示有该元素，如果返回值是-1则表示没有指定的元素"><span class="toc-number">1.</span> <span class="toc-text">附：如果需要判断数组中是否存在指定的元素也有办法，一中办法是遍历数组，每次遍历的时候判断一个是否是指定的值，如果是可以用break;跳出循环；还有一种办法是使用indexOf()方法，indexOf()方法是返回指定元素的索引，如果返回了索引则表示有该元素，如果返回值是-1则表示没有指定的元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#delete关键字"><span class="toc-number"></span> <span class="toc-text">delete关键字</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常处理"><span class="toc-number"></span> <span class="toc-text">异常处理</span></a>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/JavaScript学前/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/JavaScript学前/">JavaScript学前</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据类型</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">运算符</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">变量</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">语法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">函数</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/JavaScript基础/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.560Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/JavaScript基础/">JavaScript基础</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">简单操作</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">事件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">属性和方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数值方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数组方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">字符串方法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">定时器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/jQuery/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.555Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/jQuery/">jQuery</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/html+css/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.549Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/html+css/">html+css</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Ajax/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.544Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/Ajax/">Ajax</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/微信小程序/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/微信小程序/">微信小程序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Java基础/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.528Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/Java基础/">Java基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/浏览器兼容问题/" class="archive-article-date">
-  	<time datetime="2017-11-27T07:47:00.503Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/27/浏览器兼容问题/">浏览器兼容问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/11/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -522,8 +400,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
